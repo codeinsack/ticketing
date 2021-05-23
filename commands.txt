@@ -4,3 +4,9 @@ https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28
 
 1. minikube docker-env
 2. eval $(minikube -p minikube docker-env)
+
+***HOST FILE***
+code /etc/hosts
+
+***Browser***
+ticketing.dev - thisisunsafe
