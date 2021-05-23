@@ -10,3 +10,8 @@ code /etc/hosts
 
 ***Browser***
 ticketing.dev - thisisunsafe
+
+***ESlint + Prettier***
+npx eslint --init
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
+npm i -D prettier
