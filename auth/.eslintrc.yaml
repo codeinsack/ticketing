@@ -18,3 +18,5 @@ rules:
   no-console: off
   consistent-return: off
   class-methods-use-this: off
+  "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
+  "@typescript-eslint/explicit-module-boundary-types": off
