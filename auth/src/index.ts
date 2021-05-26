@@ -1,4 +1,4 @@
-import express, { raw } from 'express';
+import express from 'express';
 import 'express-async-errors';
 import { json } from 'body-parser';
 import mongoose from 'mongoose';
@@ -41,4 +41,4 @@ const start = async () => {
   });
 };
 
-start();
+start().then();
