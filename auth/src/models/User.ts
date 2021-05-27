@@ -1,17 +1,17 @@
 import mongoose from 'mongoose';
 
-interface UserAttributes {
+interface UserDoc extends mongoose.Document {
   email: string;
   password: string;
 }
 
-interface UserDocument extends mongoose.Document {
+interface UserAttrs {
   email: string;
   password: string;
 }
 
-interface UserModel extends mongoose.Model<UserDocument> {
-  build: (attrs: UserAttributes) => UserDocument;
+interface UserModel extends mongoose.Model<UserDoc> {
+  build(attrs: UserAttrs): UserDoc;
 }
 
 const userSchema = new mongoose.Schema({
@@ -25,8 +25,8 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model<UserDocument, UserModel>('User', userSchema);
+const User = mongoose.model<UserDoc, UserModel>('User', userSchema);
 
-userSchema.statics.build = (attrs: UserAttributes) => new User(attrs);
+userSchema.statics.build = (attrs: UserAttrs) => new User(attrs);
 
 export { User };
