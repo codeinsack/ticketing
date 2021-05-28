@@ -21,3 +21,4 @@ rules:
   "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
   "@typescript-eslint/explicit-module-boundary-types": off
   no-use-before-define: off
+  func-names: off
