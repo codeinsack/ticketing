@@ -2,7 +2,7 @@
 https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
 *****************************************************************************************
 
-0. minikube
+0. minikube start
 1. minikube docker-env
 2. eval $(minikube -p minikube docker-env)
 3. skaffold dev
@@ -17,3 +17,6 @@ ticketing.dev - thisisunsafe
 npx eslint --init
 npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
 npm i -D prettier
+
+***Create a secret key***
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
