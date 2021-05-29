@@ -11,14 +11,15 @@ parserOptions:
 plugins:
   - '@typescript-eslint'
 rules:
+  "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
+  "@typescript-eslint/explicit-module-boundary-types": off
+  "@typescript-eslint/no-non-null-assertion": off
   import/no-extraneous-dependencies: off
   import/prefer-default-export: off
   import/extensions: off
   import/no-unresolved: off
-  no-console: off
-  consistent-return: off
   class-methods-use-this: off
-  "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
-  "@typescript-eslint/explicit-module-boundary-types": off
+  consistent-return: off
   no-use-before-define: off
   func-names: off
+  no-console: off
