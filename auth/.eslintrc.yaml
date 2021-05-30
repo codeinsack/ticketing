@@ -23,3 +23,5 @@ rules:
   no-use-before-define: off
   func-names: off
   no-console: off
+  no-param-reassign: off
+  no-underscore-dangle: off
