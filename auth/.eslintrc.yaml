@@ -14,6 +14,7 @@ rules:
   "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
   "@typescript-eslint/explicit-module-boundary-types": off
   "@typescript-eslint/no-non-null-assertion": off
+  "@typescript-eslint/no-namespace": off
   import/no-extraneous-dependencies: off
   import/prefer-default-export: off
   import/extensions: off
@@ -25,3 +26,4 @@ rules:
   no-console: off
   no-param-reassign: off
   no-underscore-dangle: off
+  no-shadow: off
