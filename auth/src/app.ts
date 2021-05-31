@@ -9,12 +9,16 @@ import { signOutRouter } from './routes/signOut';
 import { signUpRouter } from './routes/signUp';
 import { errorHandler } from './middlewares/errorHandler';
 import { NotFoundError } from './errors/NotFoundError';
-import { start } from './index';
 
 const app = express();
 app.set('trust proxy', true);
 app.use(json());
-app.use(cookieSession({ signed: false, secure: true }));
+app.use(
+  cookieSession({
+    signed: false,
+    secure: process.env.NODE_ENV !== 'test',
+  }),
+);
 
 app.use(currentUserRouter);
 app.use(signInRouter);
@@ -26,7 +30,5 @@ app.all('*', async () => {
 });
 
 app.use(errorHandler);
-
-start().then();
 
 export { app };

@@ -29,3 +29,4 @@ rules:
   no-shadow: off
   no-restricted-syntax: off
   no-await-in-loop: off
+  implicit-arrow-linebreak: off
