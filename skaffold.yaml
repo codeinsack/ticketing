@@ -14,5 +14,13 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.js'
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: codeinsack/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
             dest: .

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: auth-depl
 spec:
-  replicas:
+  replicas: 1
   selector:
     matchLabels:
       app: auth
