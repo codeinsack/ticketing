@@ -1,9 +1,8 @@
+import { validateRequest, BadRequestError } from '@t1cketing/common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User';
-import { BadRequestError } from '../errors/BadRequestError';
-import { validateRequest } from '../middlewares/validateRequest';
 
 const router = express.Router();
 
