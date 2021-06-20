@@ -2,4 +2,5 @@
 auth/node_modules
 tickets/node_modules
 client/node_modules
+orders/node_modules
 client/.next
