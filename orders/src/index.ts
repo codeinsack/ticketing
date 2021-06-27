@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 import { app } from './app';
 import { natsWrapper } from './natsWrapper';
+import { TicketCreatedListener } from './events/listeners/TicketCreatedListener';
+import { TicketUpdatedListener } from './events/listeners/TicketUpdatedListener';
 
 const start = async () => {
   if (!process.env.JWT_KEY) {
@@ -33,6 +35,9 @@ const start = async () => {
     });
     process.on('SIGINT', () => natsWrapper.client.close());
     process.on('SIGTERM', () => natsWrapper.client.close());
+
+    new TicketCreatedListener(natsWrapper.client).listen();
+    new TicketUpdatedListener(natsWrapper.client).listen();
 
     await mongoose.connect(process.env.MONGO_URI!, {
       useNewUrlParser: true,
