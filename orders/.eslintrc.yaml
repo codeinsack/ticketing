@@ -32,3 +32,4 @@ rules:
   no-restricted-syntax: off
   no-await-in-loop: off
   implicit-arrow-linebreak: off
+  object-curly-newline: off
