@@ -24,3 +24,4 @@ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 kubectl port-forward nats-depl-7fc5889f6d-hllw2 4222:4222
 kubectl get pods
 kubectl get services
+kubectl get pods --all-namespaces
