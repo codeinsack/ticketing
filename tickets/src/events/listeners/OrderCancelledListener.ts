@@ -1,7 +1,6 @@
 import {
   Listener,
   OrderCancelledEvent,
-  OrderCreatedEvent,
   Subjects,
 } from '@t1cketing/common';
 import { Message } from 'node-nats-streaming';
@@ -14,7 +13,7 @@ export class OrderCancelledListener extends Listener<OrderCancelledEvent> {
 
   queueGroupName = queueGroupName;
 
-  async onMessage(data: OrderCreatedEvent['data'], msg: Message) {
+  async onMessage(data: OrderCancelledEvent['data'], msg: Message) {
     const ticket = await Ticket.findById(data.ticket.id);
 
     if (!ticket) {
