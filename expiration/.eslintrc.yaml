@@ -34,3 +34,4 @@ rules:
   implicit-arrow-linebreak: off
   object-curly-newline: off
   no-new: off
+  operator-linebreak: off
