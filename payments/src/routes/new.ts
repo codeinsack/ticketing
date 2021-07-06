@@ -9,6 +9,7 @@ import {
 } from '@t1cketing/common';
 import { body } from 'express-validator';
 import { Order } from '../models/Order';
+import { stripe } from '../stripe';
 
 const router = express.Router();
 
@@ -32,7 +33,12 @@ router.post(
       throw new BadRequestError('Can not pay for a cancelled order');
     }
 
-    console.log('token', token);
+    await stripe.charges.create({
+      currency: 'usd',
+      amount: order.price * 100,
+      source: token,
+    });
+
     res.send({ success: true });
   },
 );
