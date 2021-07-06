@@ -7,6 +7,7 @@ import {
   errorHandler,
   currentUser,
 } from '@t1cketing/common';
+import { createChargeRouter } from './routes/new';
 
 const app = express();
 app.set('trust proxy', true);
@@ -18,6 +19,8 @@ app.use(
   }),
 );
 app.use(currentUser);
+
+app.use(createChargeRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();
