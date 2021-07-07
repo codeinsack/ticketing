@@ -4,10 +4,13 @@ import axios from "axios";
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState(null);
 
-  const doRequest = async () => {
+  const doRequest = async (props = {}) => {
     try {
       setErrors(null);
-      const { data } = await axios[method](url, body);
+      const { data } = await axios[method](url, {
+        ...body,
+        ...props,
+      });
 
       if (onSuccess) {
         onSuccess(data);
