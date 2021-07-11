@@ -25,3 +25,7 @@ kubectl port-forward nats-depl-7fc5889f6d-hllw2 4222:4222
 kubectl get pods
 kubectl get services
 kubectl get pods --all-namespaces
+
+doctl kubernetes cluster kubeconfig save ticketing
+kubectl config view
+kubectl config use-context <context-name>
