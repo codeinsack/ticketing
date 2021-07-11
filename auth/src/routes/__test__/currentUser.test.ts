@@ -14,5 +14,5 @@ it('Responds with details about the current user', async () => {
 });
 
 it('Responds with null if not authenticated', async () => {
-  await request(app).get('/api/users/currentUser').send().expect(401);
+  await request(app).get('/api/users/currentUser').send().expect(200);
 });
